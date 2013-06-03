@@ -44,15 +44,19 @@ struct Vector2f {
     Vector2f& toUnitNormal() { toNormal(); return toUnit(); };
     Vector2f getUnitNormal() { auto v = getNormal(); return v.toUnit(); };
 
+    float   dotProduct(Vector2f const& v) const;
+    float crossProduct(Vector2f const& v) const; // right-handed cross product
+
     Vector2f& operator+=(Vector2f const& v); // vector addition
     Vector2f& operator-=(Vector2f const& v);
     Vector2f& operator*=(float const& s); // scalar multiplication 
 
-    float     operator*(Vector2f const& v) const; // dot product
-    float     operator^(Vector2f const& v) const; // right-handed cross-product
+    float operator*(Vector2f const& v) const { return dotProduct(v); };
+    float operator^(Vector2f const& v) const { return crossProduct(v); };
 
           float& operator[](int idx);
-    const float& operator[](int idx) const { return (*this)[idx]; }; 
+          float  operator[](int idx) const { return (*this)[idx]; };
+  /*float const& operator[](int idx) const { return (*this)[idx]; }; */
 
     friend Vector2f operator+(Vector2f lhs, Vector2f const& rhs) { lhs += rhs; return lhs; };
     friend Vector2f operator-(Vector2f lhs, Vector2f const& rhs) { lhs += rhs; return lhs; };

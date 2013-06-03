@@ -59,6 +59,14 @@ Vector2f& Vector2f::toLeftNormal() {
     return *this;
 }
 
+float Vector2f::dotProduct(Vector2f const& v) const {
+    return x*v.x + y*v.y;
+}
+
+float Vector2f::crossProduct(Vector2f const& v) const {
+    return x*v.y - v.x*y;
+}
+
 Vector2f& Vector2f::operator+=(Vector2f const& v) {
     x += v.x;
     y += v.y;
@@ -78,14 +86,6 @@ Vector2f& Vector2f::operator*=(float const& s) {
     y *= s;
 
     return *this;
-}
-
-float Vector2f::operator*(Vector2f const& v) const {
-    return x*v.x + y*v.y;
-}
-
-float Vector2f::operator^(Vector2f const& v) const {
-    return x*v.y - v.x*y;
 }
 
 float& Vector2f::operator[](int idx) {
