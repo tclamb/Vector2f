@@ -4,6 +4,7 @@
 #include <cmath>     //for std::sqrt
 #include <stdexcept> //for std::out_of_range
 
+/*
 Vector2f& Vector2f::operator=(Vector2f const& other) {
     if(this != &other) {
         x = other.x;
@@ -13,7 +14,6 @@ Vector2f& Vector2f::operator=(Vector2f const& other) {
     return *this;
 }
 
-/*
 void swap(Vector2f& first, Vector2f& second) {
     using std::swap;
 

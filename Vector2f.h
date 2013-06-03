@@ -17,13 +17,15 @@ struct Vector2f {
     Vector2f() : x(0), y(0) {};
     Vector2f(float const& _x, float const& _y) : x(_x), y(_y) {};
     Vector2f(Coord const& from, Coord const& to) : x(to.x - from.x), y(to.y - from.y) {};
-    Vector2f(Vector2f const& v) : x(v.x), y(v.y) {};
-  /*~Vector2f() {};*/
+    
+  /*Vector2f(Vector2f const& v) : x(v.x), y(v.y) {};
+    ~Vector2f() {};
 
     Vector2f& operator=(Vector2f const& other);
-    
-  /*friend void swap(Vector2f& first, Vector2f& second);
+
+    friend void swap(Vector2f& first, Vector2f& second);
     Vector2f(Vector2f&& v) { swap(*this, v); };*/
+    
 
     float getMagnitudeSquared() const;
     float getMagnitude() const;
