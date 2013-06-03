@@ -29,7 +29,7 @@ struct Vector2f {
     float getMagnitude() const;
 
     Vector2f& toUnit();
-    Vector2f  getUnit() const { Vector2f v(*this); return v.toUnit; };
+    Vector2f  getUnit() const { Vector2f v(*this); return v.toUnit(); };
 
     Vector2f& toRightNormal();
     Vector2f& toLeftNormal();
@@ -56,6 +56,6 @@ struct Vector2f {
     friend Vector2f operator-(Vector2f lhs, Vector2f const& rhs) { lhs += rhs; return lhs; };
     friend Vector2f operator*(float const& lhs, Vector2f rhs) { rhs *= lhs; return rhs; };
     friend Vector2f operator*(Vector2f lhs, float const& rhs) { lhs *= rhs; return lhs; };
-}
+};
 
 #endif
