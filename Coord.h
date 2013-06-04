@@ -8,6 +8,10 @@ struct Coord {
     Coord() : x(0), y(0) {};
     Coord(float const& _x, float const& _y) : x(_x), y(_y) {};
     Coord(Coord const& c) : x(c.x), y(c.y) {};
+
+    friend inline bool operator==(const Coord& lhs, const Coord& rhs) {
+        return (lhs.x == rhs.x) && (lhs.y == rhs.y);
+    };
 };
 
 #endif

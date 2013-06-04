@@ -1,6 +1,8 @@
 #ifndef _Vector2f_Vector2f_h_
 #define _Vector2f_Vector2f_h_
 
+#include "Coord.h"
+
 struct Vector2f {
     float x;
     float y;
