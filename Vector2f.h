@@ -33,10 +33,10 @@ struct Vector2f {
     Vector2f  getLeftNormal()  const { Vector2f v(*this); return v.toLeftNormal();  };
 
     Vector2f& toNormal() { return toRightNormal();  };
-    Vector2f getNormal() { return getRightNormal(); };
+    Vector2f getNormal() const { return getRightNormal(); };
 
     Vector2f& toUnitNormal() { toNormal(); return toUnit(); };
-    Vector2f getUnitNormal() { auto v = getNormal(); return v.toUnit(); };
+    Vector2f getUnitNormal() const { auto v = getNormal(); return v.toUnit(); };
 
     float   dotProduct(Vector2f const& v) const;
     float crossProduct(Vector2f const& v) const; // right-handed cross product
