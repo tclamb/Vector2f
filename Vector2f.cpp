@@ -88,7 +88,7 @@ Vector2f& Vector2f::operator*=(float const& s) {
     return *this;
 }
 
-float& Vector2f::operator[](int idx) {
+float& Vector2f::operator[](int const& idx) {
     using std::out_of_range;
 
     if(idx > 1 || idx < 0)
@@ -98,3 +98,12 @@ float& Vector2f::operator[](int idx) {
   /*if(idx == 1)*/ return y;
 }
 
+float Vector2f::operator[](int const& idx) const {
+    using std::out_of_range;
+
+    if(idx > 1 || idx < 0)
+        throw out_of_range("Vector2f::operator[]");
+    
+    if(idx == 0)   return x;
+  /*if(idx == 1)*/ return y;
+}
