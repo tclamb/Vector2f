@@ -51,6 +51,8 @@ class Vector2f {
             float  operator[](int const& idx) const;
    /* float const& operator[](int const& idx) const { return operator[](idx); }; */ 
 
+        Vector2f operator-() const { return Vector2f(-x, -y); }; // negation
+
         friend Vector2f operator+(Vector2f lhs, Vector2f const& rhs) { lhs += rhs; return lhs; };
         friend Vector2f operator-(Vector2f lhs, Vector2f const& rhs) { lhs -= rhs; return lhs; };
         friend Vector2f operator*(float const& lhs, Vector2f rhs) { rhs *= lhs; return rhs; };
