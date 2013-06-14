@@ -6,12 +6,12 @@ class Vector2f {
         float x;
         float y;
 
-        Vector2f() : x(0), y(0) {};
-        Vector2f(float const& _x, float const& _y) : x(_x), y(_y) {};
-        Vector2f(float const& _x, float const& _y, bool const& isUnit) : x(_x), y(_y) { if(isUnit) toUnit(); };
-        Vector2f(Vector2f const& v, bool const& isUnit) : x(v.x), y(v.y) { if(isUnit) toUnit(); };
+        Vector2f() : x{0}, y{0} {};
+        Vector2f(float const& _x, float const& _y) : x{_x}, y{_y} {};
+        Vector2f(float const& _x, float const& _y, bool const& isUnit) : x{_x}, y{_y} { if(isUnit) toUnit(); };
+        Vector2f(Vector2f const& v, bool const& isUnit) : x{v.x}, y{v.y} { if(isUnit) toUnit(); };
         
-      /*Vector2f(Vector2f const& v) : x(v.x), y(v.y) {};
+      /*Vector2f(Vector2f const& v) : x{v.x}, y{v.y} {};
         ~Vector2f() {};
 
         Vector2f& operator=(Vector2f const& other);
