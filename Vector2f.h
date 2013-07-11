@@ -57,6 +57,8 @@ class Vector2f {
         friend Vector2f operator-(Vector2f lhs, Vector2f const& rhs) { lhs -= rhs; return lhs; };
         friend Vector2f operator*(float const& lhs, Vector2f rhs) { rhs *= lhs; return rhs; };
         friend Vector2f operator*(Vector2f lhs, float const& rhs) { lhs *= rhs; return lhs; };
+
+        friend bool operator==(Vector2f const& lhs, Vector2f const& rhs) { return lhs.x == rhs.x && lhs.y == rhs.y; };
 };
 
 #endif
